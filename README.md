@@ -32,4 +32,5 @@ Une fois l'éditeur Unity lancé, allez en haut à gauche dans **Edit**, puis **
 
 Tout est installé et mis en place, si quelque chose ne va pas n'hésitez pas à demander sur le discord (cela dit on n'a pas la science infuse attention).
 Le premier tuto unity est en code joint au tuto, libre à vous de tester les objets dans le jeu, et de poser des questions si besoin !
+Une fois le code téléchargé, vous pouvez l'ouvrir dans le Hub Unity afin de pouvoir voir ce qui a été fait (dans l'éditeur, double cliquez sur la scene SampleScene si elle n'est pas directement ouverte). En lançant le jeu, vous pourrez contrôler le cube rouge avec Z,Q,S et D et pourrez le déplacer et remarquer la physique interne à Unity.
 
