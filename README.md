@@ -34,3 +34,15 @@ Tout est installé et mis en place, si quelque chose ne va pas n'hésitez pas à
 Le premier tuto unity est en code joint au tuto, libre à vous de tester les objets dans le jeu, et de poser des questions si besoin !
 Une fois le code téléchargé, vous pouvez l'ouvrir dans le Hub Unity afin de pouvoir voir ce qui a été fait (dans l'éditeur, double cliquez sur la scene SampleScene si elle n'est pas directement ouverte). En lançant le jeu, vous pourrez contrôler le cube rouge avec Z,Q,S et D et pourrez le déplacer et remarquer la physique interne à Unity.
 
+Tout d'abord, dans l'affichage d'unity, on peut voir la hiérarchie à gauche, permettant de voir tout les objets contenus dans la scène, suivi au milieu de l'éditeur, dans lequel il est possible de gérer les objets et de les déplacer et les modifier au besoin, il est également possible de lancer le jeu pour tester avec la flèche en haut de l'éditeur. Sur la partie droite se trouve l'inspecteur, permettant de regarder en détail les attributs, composants et paramètres de l'objet sélectionné.  Enfin, dans la partie inférieure, on a les assets contenant nos scripts, objets, matériels, musiques, textures etc...
+
+Pour ce premier tuto, j'ai ajouté un 3Dobject plan afin de servir de sol, auquel j'ai ajouté par dessus deux 3Dobject cubes qui nous serviront pour la suite.
+À partir d'un clic droit -> create, j'ai créé un material pour chaque cube, afin de les colorer et pouvoir les distinguer. J'ai ensuite placé convenablement la caméra au dessus du cube que j'allais considérer comme le joueur afin de pouvoir créer le script cameraControl.cs, permettant de conserver la position relative de la caméra par rapport au cube, en calculant le vecteur séparant les deux, pour ensuite dans update rattribuer ce vecteur à la position de la caméra.
+
+Ensuite vient le déplacement de ce cube. J'ai ajouté le script NewScript.cs (nommez bien vos scripts, c'est plus simple à retrouver), auquel dans la partie update (se lançant à chaque frame) j'ai ajouté les GetKey permettant de surveiller la touche sur laquelle appuie l'utilisateur, permettant de déplacer le cube à partir d'un vecteur de déplacement si l'utlisateur appuie sur la bonne touche. On remarquera la présence du "\*Time.deltaTime;", qui permet de réduire l'effet de la touche, en effet, le maintien de la touche ajoute à chaque frame du jeu ce vecteur, propulsant notre cube extrêmement loin (essayez de retirer pour voir). 
+
+Enfin, j'ai ajouté à notre cube ennemie dans l'inspecteur le tag "enemy" (via la création de tag dans le même onglet), ainsi qu'un rigidbody afin de pouvoir créer une collision avec. En ajoutant aussi rigidbody au cube joueur, on peut remarquer les physiques entre les cubes à chaque collision.
+J'ai donc ajouté à mon code un OnCollisionEnter, fonction qui s'appelle lorsqu'un objet entre en collision avec l'objet contenant ce script. Je vérifie ensuite si l'objet en collision possède le tag "enemy" auquel cas je détruis le joueur.
+
+C'est tout pour ce tuto de la première séance ! 
+
